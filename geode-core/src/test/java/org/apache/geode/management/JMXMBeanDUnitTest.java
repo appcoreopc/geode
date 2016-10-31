@@ -49,7 +49,7 @@ import org.apache.geode.test.junit.categories.FlakyTest;
 import org.apache.geode.test.junit.rules.serializable.SerializableTemporaryFolder;
 import org.apache.geode.util.test.TestUtil;
 
-public class JMXMBeanDUnitTest extends DistributedTestCase {
+public class JMXMBeanDUnitTest extends DistributedTestCase { // TODO: rename and fix on Mac
 
   private Host host;
   private VM locator;

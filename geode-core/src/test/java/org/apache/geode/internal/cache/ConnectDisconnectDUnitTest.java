@@ -40,7 +40,7 @@ public class ConnectDisconnectDUnitTest extends JUnit4CacheTestCase {
   // see bugs #50785 and #46438
   @Test
   public void testManyConnectsAndDisconnects() throws Throwable {
-    // invokeInEveryVM(new SerializableRunnable() {
+    // invokeInEveryVMAndController(new SerializableRunnable() {
     //
     // @Override
     // public void run() {

@@ -17,6 +17,8 @@ package org.apache.geode.test.dunit;
 import static org.apache.geode.test.dunit.Jitter.*;
 import static org.junit.Assert.*;
 
+import java.io.Serializable;
+
 import org.apache.logging.log4j.Logger;
 
 import org.apache.geode.internal.cache.LocalRegion;

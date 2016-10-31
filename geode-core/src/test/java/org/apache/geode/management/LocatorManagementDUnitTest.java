@@ -14,17 +14,8 @@
  */
 package org.apache.geode.management;
 
-import static org.apache.geode.distributed.ConfigurationProperties.JMX_MANAGER;
-import static org.apache.geode.distributed.ConfigurationProperties.JMX_MANAGER_HTTP_PORT;
-import static org.apache.geode.distributed.ConfigurationProperties.JMX_MANAGER_PORT;
-import static org.apache.geode.distributed.ConfigurationProperties.JMX_MANAGER_START;
-import static org.apache.geode.distributed.ConfigurationProperties.LOCATORS;
-import static org.apache.geode.distributed.ConfigurationProperties.LOG_LEVEL;
-import static org.apache.geode.distributed.ConfigurationProperties.MCAST_PORT;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.apache.geode.distributed.ConfigurationProperties.*;
+import static org.junit.Assert.*;
 
 import org.apache.geode.distributed.DistributedMember;
 import org.apache.geode.distributed.Locator;

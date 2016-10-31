@@ -14,36 +14,46 @@
  */
 package org.apache.geode.test.dunit.rules;
 
-import static org.apache.geode.test.dunit.Invoke.*;
-
 import java.io.Serializable;
 
-import org.apache.geode.test.dunit.Invoke;
-import org.apache.geode.test.dunit.SerializableRunnableIF;
-
 /**
- * Provides remote invocation support to a {@code TestRule}. These methods will invoke a
- * SerializableRunnable in all remote DUnit JVMs including the Locator JVM.
+ * Specifies which DUnit VMs will invoke a Rule.
+ *
+ * TODO: add ability to specify specific VMs
+ *
+ * TODO: add ability to specify order
  */
-class RemoteInvoker implements Serializable {
+public class WhichVMs implements Serializable {
+  private boolean controllerVM;
+  private boolean everyVM;
+  private boolean locatorVM;
 
-  private static final long serialVersionUID = -1759722991299584649L;
+  public WhichVMs() {}
 
-  // controller VM
-  // dunit VMs
-  // locator VM
-
-  public void invokeInEveryVMAndController(final SerializableRunnableIF runnable) {
-    try {
-      runnable.run();
-    } catch (Exception e) {
-      throw new RuntimeException(e);
-    }
-    Invoke.invokeInEveryVM(runnable);
+  public WhichVMs addControllerVM() {
+    this.controllerVM = true;
+    return this;
   }
 
-  public void invokeInEveryVMAndLocator(final SerializableRunnableIF runnable) {
-    Invoke.invokeInEveryVM(runnable);
-    invokeInLocator(runnable);
+  public WhichVMs addEveryVM() {
+    this.everyVM = true;
+    return this;
+  }
+
+  public WhichVMs addLocatorVM() {
+    this.locatorVM = true;
+    return this;
+  }
+
+  public boolean controllerVM() {
+    return this.controllerVM;
+  }
+
+  public boolean everyVM() {
+    return this.everyVM;
+  }
+
+  public boolean locatorVM() {
+    return this.locatorVM;
   }
 }
